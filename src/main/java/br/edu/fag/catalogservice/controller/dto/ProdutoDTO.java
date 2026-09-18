@@ -2,7 +2,7 @@ package br.edu.fag.catalogservice.controller.dto;
 
 public class ProdutoDTO {
 
-    private int id;
+    private Integer id;
 
     private String nome;
 
@@ -10,17 +10,21 @@ public class ProdutoDTO {
 
     private Double preco;
 
+    private Boolean ativo;
+
     public String getNome() {
         return nome;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
+
+
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -40,5 +44,13 @@ public class ProdutoDTO {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = true;
     }
 }

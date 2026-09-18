@@ -21,4 +21,10 @@ public class ProdutoRepository implements IProdutoRepository {
 
         return ProdutoEntityMapper.toDomain(produtoPersistido);
     };
+
+    @Override
+    public ProdutoEntity consultarId(Integer id){
+
+        return produtoRepositoryJpa.findById(id).orElse(null);
+    }
 };

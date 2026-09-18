@@ -7,4 +7,5 @@ public interface IProdutoRepository {
 
     ProdutoDomain criar (ProdutoEntity produtoEntity);
 
+    ProdutoEntity consultarId (Integer id);
 }

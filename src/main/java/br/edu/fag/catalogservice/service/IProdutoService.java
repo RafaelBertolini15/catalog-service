@@ -6,4 +6,5 @@ public interface IProdutoService {
 
     ProdutoDomain criar (ProdutoDomain produtoDomain);
 
+    ProdutoDomain consultarId (Integer id);
 }
