@@ -8,6 +8,8 @@ import br.edu.fag.catalogservice.service.domain.ProdutoDomain;
 import br.edu.fag.catalogservice.service.mapper.ProdutoEntityMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProdutoService implements IProdutoService{
 
@@ -37,6 +39,15 @@ public class ProdutoService implements IProdutoService{
         }
 
         return ProdutoEntityMapper.toDomain(produtoEntity);
+    }
+
+    @Override
+    public List<ProdutoDomain> consultaAtivos(Boolean ativo){
+
+        List<ProdutoEntity> produtos = produtoRepository.consultaAtivos(ativo);
+
+        return produtos.stream().map(ProdutoEntityMapper::toDomain).toList();
+
     }
 
 }

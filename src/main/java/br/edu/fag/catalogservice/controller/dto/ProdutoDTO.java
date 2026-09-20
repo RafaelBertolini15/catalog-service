@@ -10,7 +10,7 @@ public class ProdutoDTO {
 
     private Double preco;
 
-    private Boolean ativo;
+    private Boolean ativo = true;
 
     public String getNome() {
         return nome;
@@ -51,6 +51,6 @@ public class ProdutoDTO {
     }
 
     public void setAtivo(Boolean ativo) {
-        this.ativo = true;
+        this.ativo = ativo;
     }
 }

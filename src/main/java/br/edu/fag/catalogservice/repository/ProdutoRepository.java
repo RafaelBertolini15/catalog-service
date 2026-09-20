@@ -5,6 +5,8 @@ import br.edu.fag.catalogservice.service.domain.ProdutoDomain;
 import br.edu.fag.catalogservice.service.mapper.ProdutoEntityMapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 
 @Repository
 public class ProdutoRepository implements IProdutoRepository {
@@ -26,5 +28,14 @@ public class ProdutoRepository implements IProdutoRepository {
     public ProdutoEntity consultarId(Integer id){
 
         return produtoRepositoryJpa.findById(id).orElse(null);
+    }
+
+    @Override
+    public List<ProdutoEntity> consultaAtivos (Boolean ativo){
+
+        return produtoRepositoryJpa.findAll()
+                .stream()
+                .filter(produto -> Boolean.TRUE.equals(produto.getAtivo()))
+                .toList();
     }
 };
