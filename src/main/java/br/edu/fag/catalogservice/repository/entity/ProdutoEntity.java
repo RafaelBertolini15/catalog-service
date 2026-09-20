@@ -11,13 +11,15 @@ public class ProdutoEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     private String nome;
 
     private String descricao;
 
     private Double preco;
+
+    private Boolean ativo;
 
     private LocalDateTime dataCriada;
 
@@ -26,11 +28,11 @@ public class ProdutoEntity {
         dataCriada = LocalDateTime.now();
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -56,5 +58,13 @@ public class ProdutoEntity {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
     }
 }
