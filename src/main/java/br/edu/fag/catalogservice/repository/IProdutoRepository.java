@@ -12,4 +12,6 @@ public interface IProdutoRepository {
     ProdutoEntity consultarId (Integer id);
 
     List<ProdutoEntity> consultaAtivos (Boolean ativo);
+
+    ProdutoEntity desativaId (Integer id);
 }

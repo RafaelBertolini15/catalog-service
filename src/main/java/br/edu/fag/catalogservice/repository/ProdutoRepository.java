@@ -38,4 +38,17 @@ public class ProdutoRepository implements IProdutoRepository {
                 .filter(produto -> Boolean.TRUE.equals(produto.getAtivo()))
                 .toList();
     }
+
+    @Override
+    public ProdutoEntity desativaId (Integer id){
+
+        ProdutoEntity produtoEscolhido = produtoRepositoryJpa.findById(id).orElse(null);
+
+        if(produtoEscolhido != null ){
+            produtoEscolhido.setAtivo(false);
+            return produtoRepositoryJpa.save(produtoEscolhido);
+        }
+
+        return null;
+    }
 };

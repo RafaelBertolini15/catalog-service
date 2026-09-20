@@ -50,4 +50,16 @@ public class ProdutoService implements IProdutoService{
 
     }
 
+    @Override
+    public ProdutoDomain desativaId(Integer id){
+
+        ProdutoEntity produtoDesativado = produtoRepository.desativaId(id);
+
+        if(produtoDesativado == null){
+            throw new ProductNotFoundException(id.longValue());
+        }
+
+        return ProdutoEntityMapper.toDomain(produtoDesativado);
+    }
+
 }

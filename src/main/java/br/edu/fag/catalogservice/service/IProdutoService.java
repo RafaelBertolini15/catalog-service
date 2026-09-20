@@ -12,4 +12,6 @@ public interface IProdutoService {
     ProdutoDomain consultarId (Integer id);
 
     List<ProdutoDomain> consultaAtivos (Boolean ativo);
+
+    ProdutoDomain desativaId (Integer id);
 }
